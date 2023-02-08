@@ -52,7 +52,7 @@ Future<InitResult> init() async {
       },
       ...appMiddleware.middleware,
     ],
-  );
+  )..dispatch(const GetAllTodos.start());
 
   return InitResult._(store, actions.stream);
 }

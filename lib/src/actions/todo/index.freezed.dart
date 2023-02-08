@@ -591,3 +591,605 @@ abstract class GetAllTodosError
   _$$GetAllTodosErrorCopyWith<_$GetAllTodosError> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$SaveTodo {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, String? notes, String pendingId)
+        start,
+    required TResult Function(Todo todo, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String title, String? notes, String pendingId)? start,
+    TResult? Function(Todo todo, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, String? notes, String pendingId)? start,
+    TResult Function(Todo todo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveTodoStart value) start,
+    required TResult Function(SaveTodoSuccessful value) successful,
+    required TResult Function(SaveTodoError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveTodoStart value)? start,
+    TResult? Function(SaveTodoSuccessful value)? successful,
+    TResult? Function(SaveTodoError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveTodoStart value)? start,
+    TResult Function(SaveTodoSuccessful value)? successful,
+    TResult Function(SaveTodoError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SaveTodoCopyWith<SaveTodo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SaveTodoCopyWith<$Res> {
+  factory $SaveTodoCopyWith(SaveTodo value, $Res Function(SaveTodo) then) =
+      _$SaveTodoCopyWithImpl<$Res, SaveTodo>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SaveTodoCopyWithImpl<$Res, $Val extends SaveTodo>
+    implements $SaveTodoCopyWith<$Res> {
+  _$SaveTodoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SaveTodoStartCopyWith<$Res>
+    implements $SaveTodoCopyWith<$Res> {
+  factory _$$SaveTodoStartCopyWith(
+          _$SaveTodoStart value, $Res Function(_$SaveTodoStart) then) =
+      __$$SaveTodoStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String title, String? notes, String pendingId});
+}
+
+/// @nodoc
+class __$$SaveTodoStartCopyWithImpl<$Res>
+    extends _$SaveTodoCopyWithImpl<$Res, _$SaveTodoStart>
+    implements _$$SaveTodoStartCopyWith<$Res> {
+  __$$SaveTodoStartCopyWithImpl(
+      _$SaveTodoStart _value, $Res Function(_$SaveTodoStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+    Object? notes = freezed,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SaveTodoStart(
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      notes: freezed == notes
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SaveTodoStart implements SaveTodoStart {
+  const _$SaveTodoStart(
+      {required this.title, this.notes, this.pendingId = _kSaveTodoPendingId});
+
+  @override
+  final String title;
+  @override
+  final String? notes;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SaveTodo.start(title: $title, notes: $notes, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveTodoStart &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, title, notes, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveTodoStartCopyWith<_$SaveTodoStart> get copyWith =>
+      __$$SaveTodoStartCopyWithImpl<_$SaveTodoStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, String? notes, String pendingId)
+        start,
+    required TResult Function(Todo todo, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(title, notes, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String title, String? notes, String pendingId)? start,
+    TResult? Function(Todo todo, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(title, notes, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, String? notes, String pendingId)? start,
+    TResult Function(Todo todo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(title, notes, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveTodoStart value) start,
+    required TResult Function(SaveTodoSuccessful value) successful,
+    required TResult Function(SaveTodoError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveTodoStart value)? start,
+    TResult? Function(SaveTodoSuccessful value)? successful,
+    TResult? Function(SaveTodoError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveTodoStart value)? start,
+    TResult Function(SaveTodoSuccessful value)? successful,
+    TResult Function(SaveTodoError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveTodoStart implements SaveTodo, ActionStart {
+  const factory SaveTodoStart(
+      {required final String title,
+      final String? notes,
+      final String pendingId}) = _$SaveTodoStart;
+
+  String get title;
+  String? get notes;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SaveTodoStartCopyWith<_$SaveTodoStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveTodoSuccessfulCopyWith<$Res>
+    implements $SaveTodoCopyWith<$Res> {
+  factory _$$SaveTodoSuccessfulCopyWith(_$SaveTodoSuccessful value,
+          $Res Function(_$SaveTodoSuccessful) then) =
+      __$$SaveTodoSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Todo todo, String pendingId});
+
+  $TodoCopyWith<$Res> get todo;
+}
+
+/// @nodoc
+class __$$SaveTodoSuccessfulCopyWithImpl<$Res>
+    extends _$SaveTodoCopyWithImpl<$Res, _$SaveTodoSuccessful>
+    implements _$$SaveTodoSuccessfulCopyWith<$Res> {
+  __$$SaveTodoSuccessfulCopyWithImpl(
+      _$SaveTodoSuccessful _value, $Res Function(_$SaveTodoSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? todo = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SaveTodoSuccessful(
+      null == todo
+          ? _value.todo
+          : todo // ignore: cast_nullable_to_non_nullable
+              as Todo,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TodoCopyWith<$Res> get todo {
+    return $TodoCopyWith<$Res>(_value.todo, (value) {
+      return _then(_value.copyWith(todo: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SaveTodoSuccessful implements SaveTodoSuccessful {
+  const _$SaveTodoSuccessful(this.todo, [this.pendingId = _kSaveTodoPendingId]);
+
+  @override
+  final Todo todo;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SaveTodo.successful(todo: $todo, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveTodoSuccessful &&
+            (identical(other.todo, todo) || other.todo == todo) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, todo, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveTodoSuccessfulCopyWith<_$SaveTodoSuccessful> get copyWith =>
+      __$$SaveTodoSuccessfulCopyWithImpl<_$SaveTodoSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, String? notes, String pendingId)
+        start,
+    required TResult Function(Todo todo, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(todo, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String title, String? notes, String pendingId)? start,
+    TResult? Function(Todo todo, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(todo, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, String? notes, String pendingId)? start,
+    TResult Function(Todo todo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(todo, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveTodoStart value) start,
+    required TResult Function(SaveTodoSuccessful value) successful,
+    required TResult Function(SaveTodoError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveTodoStart value)? start,
+    TResult? Function(SaveTodoSuccessful value)? successful,
+    TResult? Function(SaveTodoError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveTodoStart value)? start,
+    TResult Function(SaveTodoSuccessful value)? successful,
+    TResult Function(SaveTodoError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveTodoSuccessful implements SaveTodo, ActionDone {
+  const factory SaveTodoSuccessful(final Todo todo, [final String pendingId]) =
+      _$SaveTodoSuccessful;
+
+  Todo get todo;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SaveTodoSuccessfulCopyWith<_$SaveTodoSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveTodoErrorCopyWith<$Res>
+    implements $SaveTodoCopyWith<$Res> {
+  factory _$$SaveTodoErrorCopyWith(
+          _$SaveTodoError value, $Res Function(_$SaveTodoError) then) =
+      __$$SaveTodoErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$SaveTodoErrorCopyWithImpl<$Res>
+    extends _$SaveTodoCopyWithImpl<$Res, _$SaveTodoError>
+    implements _$$SaveTodoErrorCopyWith<$Res> {
+  __$$SaveTodoErrorCopyWithImpl(
+      _$SaveTodoError _value, $Res Function(_$SaveTodoError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SaveTodoError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SaveTodoError implements SaveTodoError {
+  const _$SaveTodoError(this.error, this.stackTrace,
+      [this.pendingId = _kSaveTodoPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SaveTodo.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveTodoError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveTodoErrorCopyWith<_$SaveTodoError> get copyWith =>
+      __$$SaveTodoErrorCopyWithImpl<_$SaveTodoError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String title, String? notes, String pendingId)
+        start,
+    required TResult Function(Todo todo, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String title, String? notes, String pendingId)? start,
+    TResult? Function(Todo todo, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String title, String? notes, String pendingId)? start,
+    TResult Function(Todo todo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveTodoStart value) start,
+    required TResult Function(SaveTodoSuccessful value) successful,
+    required TResult Function(SaveTodoError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveTodoStart value)? start,
+    TResult? Function(SaveTodoSuccessful value)? successful,
+    TResult? Function(SaveTodoError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveTodoStart value)? start,
+    TResult Function(SaveTodoSuccessful value)? successful,
+    TResult Function(SaveTodoError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveTodoError implements SaveTodo, ActionDone, ErrorAction {
+  const factory SaveTodoError(final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$SaveTodoError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SaveTodoErrorCopyWith<_$SaveTodoError> get copyWith =>
+      throw _privateConstructorUsedError;
+}

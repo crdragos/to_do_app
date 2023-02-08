@@ -10,13 +10,20 @@ class TodoEpics {
 
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
-      TypedEpic<AppState, GetAllTodos>(_getAllTodos),
+      TypedEpic<AppState, GetAllTodosStart>(_getAllTodos),
+      TypedEpic<AppState, SaveTodoStart>(_saveTodo),
     ]);
   }
 
-  Stream<AppAction> _getAllTodos(Stream<GetAllTodos> actions, EpicStore<AppState> store) {
+  Stream<AppAction> _getAllTodos(Stream<GetAllTodosStart> actions, EpicStore<AppState> store) {
     return actions
-        .asyncMap((GetAllTodos action) => _todoApi.getAll())
+        .asyncMap((GetAllTodosStart action) => _todoApi.getAll())
         .map((List<Todo> todos) => GetAllTodos.successful(todos));
+  }
+
+  Stream<AppAction> _saveTodo(Stream<SaveTodoStart> actions, EpicStore<AppState> store) {
+    return actions
+        .asyncMap((SaveTodoStart action) => _todoApi.save(title: action.title, notes: action.notes))
+        .map((Todo todo) => SaveTodo.successful(todo));
   }
 }

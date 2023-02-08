@@ -6,3 +6,4 @@ import 'package:to_do_app/src/models/index.dart';
 
 part 'get_all.dart';
 part 'index.freezed.dart';
+part 'save.dart';

@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:to_do_app/src/models/index.dart';
+import 'package:uuid/uuid.dart';
 
 class TodoApi {
   const TodoApi({required Box<Todo> todosBox}) : _todosBox = todosBox;
@@ -8,5 +9,12 @@ class TodoApi {
 
   Future<List<Todo>> getAll() async {
     return _todosBox.values.toList();
+  }
+
+  Future<Todo> save({required String title, String? notes}) async {
+    final String id = const Uuid().v4();
+    final Todo todo = Todo(id: id, title: title, notes: notes, isComplete: false);
+    await _todosBox.put(todo.id, todo);
+    return todo;
   }
 }
