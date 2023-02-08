@@ -1,16 +1,15 @@
-# to_do_app
+# Todo App
 
-A new Flutter project.
+This is a simple project that represents a mobile applications for managing your todos.
 
-## Getting Started
+## Technology stack
+- Dart 
+- Flutter
+- Hive
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+- [ ] View all todos
+- [ ] Add new todo
+- [ ] Mark todo as complete
+- [ ] Delete completed todos
+- [ ] Store all todos in phone local storage using Hive
