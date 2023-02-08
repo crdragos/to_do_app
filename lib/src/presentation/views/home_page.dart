@@ -6,8 +6,8 @@ import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/containers/index.dart';
 import 'package:to_do_app/src/models/index.dart';
 import 'package:to_do_app/src/presentation/utils/app_strings.dart';
-
-import '../widgets/custom_material_bottom_sheet.dart';
+import 'package:to_do_app/src/presentation/widgets/custom_material_bottom_sheet.dart';
+import 'package:to_do_app/src/presentation/widgets/todo_tile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -60,11 +60,12 @@ class HomePage extends StatelessWidget {
             return const Center(child: Text(AppStrings.noTodos));
           }
           return ListView.separated(
+            padding: const EdgeInsets.all(16),
             itemCount: vm.todos.length,
             separatorBuilder: (BuildContext context, int index) => const SizedBox(height: 12),
             itemBuilder: (BuildContext context, int index) {
               final Todo todo = vm.todos[index];
-              return Text(todo.title);
+              return TodoTile(todo: todo);
             },
           );
         },
