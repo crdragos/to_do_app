@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of models;
 
@@ -12,36 +12,11 @@ part of models;
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Todo _$TodoFromJson(Map<String, dynamic> json) {
   return Todo$.fromJson(json);
 }
-
-/// @nodoc
-class _$TodoTearOff {
-  const _$TodoTearOff();
-
-  Todo$ call(
-      {required String id,
-      required String title,
-      String? notes,
-      bool isComplete = false}) {
-    return Todo$(
-      id: id,
-      title: title,
-      notes: notes,
-      isComplete: isComplete,
-    );
-  }
-
-  Todo fromJson(Map<String, Object?> json) {
-    return Todo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Todo = _$TodoTearOff();
 
 /// @nodoc
 mixin _$Todo {
@@ -58,84 +33,87 @@ mixin _$Todo {
 /// @nodoc
 abstract class $TodoCopyWith<$Res> {
   factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
-      _$TodoCopyWithImpl<$Res>;
+      _$TodoCopyWithImpl<$Res, Todo>;
+  @useResult
   $Res call({String id, String title, String? notes, bool isComplete});
 }
 
 /// @nodoc
-class _$TodoCopyWithImpl<$Res> implements $TodoCopyWith<$Res> {
+class _$TodoCopyWithImpl<$Res, $Val extends Todo>
+    implements $TodoCopyWith<$Res> {
   _$TodoCopyWithImpl(this._value, this._then);
 
-  final Todo _value;
   // ignore: unused_field
-  final $Res Function(Todo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? title = freezed,
+    Object? id = null,
+    Object? title = null,
     Object? notes = freezed,
-    Object? isComplete = freezed,
+    Object? isComplete = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      notes: notes == freezed
+      notes: freezed == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      isComplete: isComplete == freezed
+      isComplete: null == isComplete
           ? _value.isComplete
           : isComplete // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class $Todo$CopyWith<$Res> implements $TodoCopyWith<$Res> {
-  factory $Todo$CopyWith(Todo$ value, $Res Function(Todo$) then) =
-      _$Todo$CopyWithImpl<$Res>;
+abstract class _$$Todo$CopyWith<$Res> implements $TodoCopyWith<$Res> {
+  factory _$$Todo$CopyWith(_$Todo$ value, $Res Function(_$Todo$) then) =
+      __$$Todo$CopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String title, String? notes, bool isComplete});
 }
 
 /// @nodoc
-class _$Todo$CopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res>
-    implements $Todo$CopyWith<$Res> {
-  _$Todo$CopyWithImpl(Todo$ _value, $Res Function(Todo$) _then)
-      : super(_value, (v) => _then(v as Todo$));
+class __$$Todo$CopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$Todo$>
+    implements _$$Todo$CopyWith<$Res> {
+  __$$Todo$CopyWithImpl(_$Todo$ _value, $Res Function(_$Todo$) _then)
+      : super(_value, _then);
 
-  @override
-  Todo$ get _value => super._value as Todo$;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? title = freezed,
+    Object? id = null,
+    Object? title = null,
     Object? notes = freezed,
-    Object? isComplete = freezed,
+    Object? isComplete = null,
   }) {
-    return _then(Todo$(
-      id: id == freezed
+    return _then(_$Todo$(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      notes: notes == freezed
+      notes: freezed == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      isComplete: isComplete == freezed
+      isComplete: null == isComplete
           ? _value.isComplete
           : isComplete // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -160,8 +138,8 @@ class _$Todo$ implements Todo$ {
   final String title;
   @override
   final String? notes;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isComplete;
 
   @override
@@ -173,39 +151,38 @@ class _$Todo$ implements Todo$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Todo$ &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.notes, notes) &&
-            const DeepCollectionEquality()
-                .equals(other.isComplete, isComplete));
+            other is _$Todo$ &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.isComplete, isComplete) ||
+                other.isComplete == isComplete));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(notes),
-      const DeepCollectionEquality().hash(isComplete));
 
   @JsonKey(ignore: true)
   @override
-  $Todo$CopyWith<Todo$> get copyWith =>
-      _$Todo$CopyWithImpl<Todo$>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, title, notes, isComplete);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$Todo$CopyWith<_$Todo$> get copyWith =>
+      __$$Todo$CopyWithImpl<_$Todo$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$Todo$ToJson(this);
+    return _$$Todo$ToJson(
+      this,
+    );
   }
 }
 
 abstract class Todo$ implements Todo {
   const factory Todo$(
-      {required String id,
-      required String title,
-      String? notes,
-      bool isComplete}) = _$Todo$;
+      {required final String id,
+      required final String title,
+      final String? notes,
+      final bool isComplete}) = _$Todo$;
 
   factory Todo$.fromJson(Map<String, dynamic> json) = _$Todo$.fromJson;
 
@@ -219,85 +196,78 @@ abstract class Todo$ implements Todo {
   bool get isComplete;
   @override
   @JsonKey(ignore: true)
-  $Todo$CopyWith<Todo$> get copyWith => throw _privateConstructorUsedError;
+  _$$Todo$CopyWith<_$Todo$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$TodosSateTearOff {
-  const _$TodosSateTearOff();
-
-  TodosSate$ call({Map<String, Todo> todos = const <String, Todo>{}}) {
-    return TodosSate$(
-      todos: todos,
-    );
-  }
-}
-
-/// @nodoc
-const $TodosSate = _$TodosSateTearOff();
-
-/// @nodoc
-mixin _$TodosSate {
+mixin _$TodosState {
   Map<String, Todo> get todos => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TodosSateCopyWith<TodosSate> get copyWith =>
+  $TodosStateCopyWith<TodosState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TodosSateCopyWith<$Res> {
-  factory $TodosSateCopyWith(TodosSate value, $Res Function(TodosSate) then) =
-      _$TodosSateCopyWithImpl<$Res>;
+abstract class $TodosStateCopyWith<$Res> {
+  factory $TodosStateCopyWith(
+          TodosState value, $Res Function(TodosState) then) =
+      _$TodosStateCopyWithImpl<$Res, TodosState>;
+  @useResult
   $Res call({Map<String, Todo> todos});
 }
 
 /// @nodoc
-class _$TodosSateCopyWithImpl<$Res> implements $TodosSateCopyWith<$Res> {
-  _$TodosSateCopyWithImpl(this._value, this._then);
+class _$TodosStateCopyWithImpl<$Res, $Val extends TodosState>
+    implements $TodosStateCopyWith<$Res> {
+  _$TodosStateCopyWithImpl(this._value, this._then);
 
-  final TodosSate _value;
   // ignore: unused_field
-  final $Res Function(TodosSate) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? todos = freezed,
+    Object? todos = null,
   }) {
     return _then(_value.copyWith(
-      todos: todos == freezed
+      todos: null == todos
           ? _value.todos
           : todos // ignore: cast_nullable_to_non_nullable
               as Map<String, Todo>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class $TodosSate$CopyWith<$Res> implements $TodosSateCopyWith<$Res> {
-  factory $TodosSate$CopyWith(
-          TodosSate$ value, $Res Function(TodosSate$) then) =
-      _$TodosSate$CopyWithImpl<$Res>;
+abstract class _$$TodosState$CopyWith<$Res>
+    implements $TodosStateCopyWith<$Res> {
+  factory _$$TodosState$CopyWith(
+          _$TodosState$ value, $Res Function(_$TodosState$) then) =
+      __$$TodosState$CopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Map<String, Todo> todos});
 }
 
 /// @nodoc
-class _$TodosSate$CopyWithImpl<$Res> extends _$TodosSateCopyWithImpl<$Res>
-    implements $TodosSate$CopyWith<$Res> {
-  _$TodosSate$CopyWithImpl(TodosSate$ _value, $Res Function(TodosSate$) _then)
-      : super(_value, (v) => _then(v as TodosSate$));
+class __$$TodosState$CopyWithImpl<$Res>
+    extends _$TodosStateCopyWithImpl<$Res, _$TodosState$>
+    implements _$$TodosState$CopyWith<$Res> {
+  __$$TodosState$CopyWithImpl(
+      _$TodosState$ _value, $Res Function(_$TodosState$) _then)
+      : super(_value, _then);
 
-  @override
-  TodosSate$ get _value => super._value as TodosSate$;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? todos = freezed,
+    Object? todos = null,
   }) {
-    return _then(TodosSate$(
-      todos: todos == freezed
-          ? _value.todos
+    return _then(_$TodosState$(
+      todos: null == todos
+          ? _value._todos
           : todos // ignore: cast_nullable_to_non_nullable
               as Map<String, Todo>,
     ));
@@ -306,67 +276,57 @@ class _$TodosSate$CopyWithImpl<$Res> extends _$TodosSateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TodosSate$ implements TodosSate$ {
-  const _$TodosSate$({this.todos = const <String, Todo>{}});
+class _$TodosState$ implements TodosState$ {
+  const _$TodosState$({final Map<String, Todo> todos = const <String, Todo>{}})
+      : _todos = todos;
 
-  @JsonKey()
+  final Map<String, Todo> _todos;
   @override
-  final Map<String, Todo> todos;
+  @JsonKey()
+  Map<String, Todo> get todos {
+    if (_todos is EqualUnmodifiableMapView) return _todos;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_todos);
+  }
 
   @override
   String toString() {
-    return 'TodosSate(todos: $todos)';
+    return 'TodosState(todos: $todos)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is TodosSate$ &&
-            const DeepCollectionEquality().equals(other.todos, todos));
+            other is _$TodosState$ &&
+            const DeepCollectionEquality().equals(other._todos, _todos));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(todos));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_todos));
 
   @JsonKey(ignore: true)
   @override
-  $TodosSate$CopyWith<TodosSate$> get copyWith =>
-      _$TodosSate$CopyWithImpl<TodosSate$>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$TodosState$CopyWith<_$TodosState$> get copyWith =>
+      __$$TodosState$CopyWithImpl<_$TodosState$>(this, _$identity);
 }
 
-abstract class TodosSate$ implements TodosSate {
-  const factory TodosSate$({Map<String, Todo> todos}) = _$TodosSate$;
+abstract class TodosState$ implements TodosState {
+  const factory TodosState$({final Map<String, Todo> todos}) = _$TodosState$;
 
   @override
   Map<String, Todo> get todos;
   @override
   @JsonKey(ignore: true)
-  $TodosSate$CopyWith<TodosSate$> get copyWith =>
+  _$$TodosState$CopyWith<_$TodosState$> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$AppStateTearOff {
-  const _$AppStateTearOff();
-
-  AppState$ call(
-      {TodosSate todosSate = const TodosSate(),
-      Set<String> pending = const <String>{}}) {
-    return AppState$(
-      todosSate: todosSate,
-      pending: pending,
-    );
-  }
-}
-
-/// @nodoc
-const $AppState = _$AppStateTearOff();
-
-/// @nodoc
 mixin _$AppState {
-  TodosSate get todosSate => throw _privateConstructorUsedError;
+  TodosState get todosSate => throw _privateConstructorUsedError;
   Set<String> get pending => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -377,77 +337,84 @@ mixin _$AppState {
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res>;
-  $Res call({TodosSate todosSate, Set<String> pending});
+      _$AppStateCopyWithImpl<$Res, AppState>;
+  @useResult
+  $Res call({TodosState todosSate, Set<String> pending});
 
-  $TodosSateCopyWith<$Res> get todosSate;
+  $TodosStateCopyWith<$Res> get todosSate;
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
+    implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
-  final AppState _value;
   // ignore: unused_field
-  final $Res Function(AppState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? todosSate = freezed,
-    Object? pending = freezed,
+    Object? todosSate = null,
+    Object? pending = null,
   }) {
     return _then(_value.copyWith(
-      todosSate: todosSate == freezed
+      todosSate: null == todosSate
           ? _value.todosSate
           : todosSate // ignore: cast_nullable_to_non_nullable
-              as TodosSate,
-      pending: pending == freezed
+              as TodosState,
+      pending: null == pending
           ? _value.pending
           : pending // ignore: cast_nullable_to_non_nullable
               as Set<String>,
-    ));
+    ) as $Val);
   }
 
   @override
-  $TodosSateCopyWith<$Res> get todosSate {
-    return $TodosSateCopyWith<$Res>(_value.todosSate, (value) {
-      return _then(_value.copyWith(todosSate: value));
+  @pragma('vm:prefer-inline')
+  $TodosStateCopyWith<$Res> get todosSate {
+    return $TodosStateCopyWith<$Res>(_value.todosSate, (value) {
+      return _then(_value.copyWith(todosSate: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory $AppState$CopyWith(AppState$ value, $Res Function(AppState$) then) =
-      _$AppState$CopyWithImpl<$Res>;
+abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory _$$AppState$CopyWith(
+          _$AppState$ value, $Res Function(_$AppState$) then) =
+      __$$AppState$CopyWithImpl<$Res>;
   @override
-  $Res call({TodosSate todosSate, Set<String> pending});
+  @useResult
+  $Res call({TodosState todosSate, Set<String> pending});
 
   @override
-  $TodosSateCopyWith<$Res> get todosSate;
+  $TodosStateCopyWith<$Res> get todosSate;
 }
 
 /// @nodoc
-class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
-    implements $AppState$CopyWith<$Res> {
-  _$AppState$CopyWithImpl(AppState$ _value, $Res Function(AppState$) _then)
-      : super(_value, (v) => _then(v as AppState$));
+class __$$AppState$CopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$AppState$>
+    implements _$$AppState$CopyWith<$Res> {
+  __$$AppState$CopyWithImpl(
+      _$AppState$ _value, $Res Function(_$AppState$) _then)
+      : super(_value, _then);
 
-  @override
-  AppState$ get _value => super._value as AppState$;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? todosSate = freezed,
-    Object? pending = freezed,
+    Object? todosSate = null,
+    Object? pending = null,
   }) {
-    return _then(AppState$(
-      todosSate: todosSate == freezed
+    return _then(_$AppState$(
+      todosSate: null == todosSate
           ? _value.todosSate
           : todosSate // ignore: cast_nullable_to_non_nullable
-              as TodosSate,
-      pending: pending == freezed
-          ? _value.pending
+              as TodosState,
+      pending: null == pending
+          ? _value._pending
           : pending // ignore: cast_nullable_to_non_nullable
               as Set<String>,
     ));
@@ -458,14 +425,21 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 
 class _$AppState$ implements AppState$ {
   const _$AppState$(
-      {this.todosSate = const TodosSate(), this.pending = const <String>{}});
+      {this.todosSate = const TodosState(),
+      final Set<String> pending = const <String>{}})
+      : _pending = pending;
 
-  @JsonKey()
   @override
-  final TodosSate todosSate;
   @JsonKey()
+  final TodosState todosSate;
+  final Set<String> _pending;
   @override
-  final Set<String> pending;
+  @JsonKey()
+  Set<String> get pending {
+    if (_pending is EqualUnmodifiableSetView) return _pending;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableSetView(_pending);
+  }
 
   @override
   String toString() {
@@ -476,33 +450,33 @@ class _$AppState$ implements AppState$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AppState$ &&
-            const DeepCollectionEquality().equals(other.todosSate, todosSate) &&
-            const DeepCollectionEquality().equals(other.pending, pending));
+            other is _$AppState$ &&
+            (identical(other.todosSate, todosSate) ||
+                other.todosSate == todosSate) &&
+            const DeepCollectionEquality().equals(other._pending, _pending));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(todosSate),
-      const DeepCollectionEquality().hash(pending));
+      runtimeType, todosSate, const DeepCollectionEquality().hash(_pending));
 
   @JsonKey(ignore: true)
   @override
-  $AppState$CopyWith<AppState$> get copyWith =>
-      _$AppState$CopyWithImpl<AppState$>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$AppState$CopyWith<_$AppState$> get copyWith =>
+      __$$AppState$CopyWithImpl<_$AppState$>(this, _$identity);
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$({TodosSate todosSate, Set<String> pending}) =
-      _$AppState$;
+  const factory AppState$(
+      {final TodosState todosSate, final Set<String> pending}) = _$AppState$;
 
   @override
-  TodosSate get todosSate;
+  TodosState get todosSate;
   @override
   Set<String> get pending;
   @override
   @JsonKey(ignore: true)
-  $AppState$CopyWith<AppState$> get copyWith =>
+  _$$AppState$CopyWith<_$AppState$> get copyWith =>
       throw _privateConstructorUsedError;
 }
