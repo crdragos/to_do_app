@@ -15,6 +15,123 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+mixin _$DeleteTodoById {
+  String get id => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DeleteTodoByIdCopyWith<DeleteTodoById> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeleteTodoByIdCopyWith<$Res> {
+  factory $DeleteTodoByIdCopyWith(
+          DeleteTodoById value, $Res Function(DeleteTodoById) then) =
+      _$DeleteTodoByIdCopyWithImpl<$Res, DeleteTodoById>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class _$DeleteTodoByIdCopyWithImpl<$Res, $Val extends DeleteTodoById>
+    implements $DeleteTodoByIdCopyWith<$Res> {
+  _$DeleteTodoByIdCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DeleteTodoById$CopyWith<$Res>
+    implements $DeleteTodoByIdCopyWith<$Res> {
+  factory _$$DeleteTodoById$CopyWith(
+          _$DeleteTodoById$ value, $Res Function(_$DeleteTodoById$) then) =
+      __$$DeleteTodoById$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$DeleteTodoById$CopyWithImpl<$Res>
+    extends _$DeleteTodoByIdCopyWithImpl<$Res, _$DeleteTodoById$>
+    implements _$$DeleteTodoById$CopyWith<$Res> {
+  __$$DeleteTodoById$CopyWithImpl(
+      _$DeleteTodoById$ _value, $Res Function(_$DeleteTodoById$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$DeleteTodoById$(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteTodoById$ implements DeleteTodoById$ {
+  const _$DeleteTodoById$({required this.id});
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'DeleteTodoById(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteTodoById$ &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteTodoById$CopyWith<_$DeleteTodoById$> get copyWith =>
+      __$$DeleteTodoById$CopyWithImpl<_$DeleteTodoById$>(this, _$identity);
+}
+
+abstract class DeleteTodoById$ implements DeleteTodoById {
+  const factory DeleteTodoById$({required final String id}) = _$DeleteTodoById$;
+
+  @override
+  String get id;
+  @override
+  @JsonKey(ignore: true)
+  _$$DeleteTodoById$CopyWith<_$DeleteTodoById$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$GetAllTodos {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

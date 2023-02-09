@@ -10,7 +10,6 @@ Reducer<TodosState> todoReducer = combineReducers(<Reducer<TodosState>>[
 TodosState _getAllTodosSuccessful(TodosState state, GetAllTodosSuccessful action) {
   return state.copyWith(
     todos: <String, Todo>{
-      ...state.todos,
       for (Todo todo in action.todos) todo.id: todo,
     },
   );
