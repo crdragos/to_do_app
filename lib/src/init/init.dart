@@ -32,12 +32,12 @@ Future<InitResult> init() async {
   final String dirPath = appDir.path;
 
   _initHive(dirPath);
-  final Box<Todo> todosBox = await Hive.openBox('todosBox');
+  final Box<Todo> todosBox = await Hive.openBox<Todo>('todosBox');
 
   final TodoApi todoApi = TodoApi(todosBox: todosBox);
 
   final AppEpics appEpics = AppEpics(todoApi: todoApi);
-  const AppMiddleware appMiddleware = AppMiddleware();
+  final AppMiddleware appMiddleware = AppMiddleware(todoApi: todoApi);
   final StreamController<AppAction> actions = StreamController<AppAction>.broadcast();
   final Store<AppState> store = Store<AppState>(
     reducer,

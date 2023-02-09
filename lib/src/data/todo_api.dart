@@ -17,4 +17,15 @@ class TodoApi {
     await _todosBox.put(todo.id, todo);
     return todo;
   }
+
+  Future<void> markAsComplete({required String id, required bool isComplete}) async {
+    final Todo? todo = _todosBox.get(id);
+
+    if (todo == null) {
+      return;
+    }
+
+    await _todosBox.put(id, todo.copyWith(isComplete: isComplete));
+    await _todosBox.flush();
+  }
 }
