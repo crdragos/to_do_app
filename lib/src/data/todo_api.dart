@@ -30,6 +30,5 @@ class TodoApi {
     }
 
     await _todosBox.put(id, todo.copyWith(isComplete: isComplete));
-    await _todosBox.flush();
   }
 }

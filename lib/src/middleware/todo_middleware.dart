@@ -11,12 +11,19 @@ class TodoMiddleware {
   List<Middleware<AppState>> get middleware {
     return <Middleware<AppState>>[
       TypedMiddleware<AppState, DeleteTodoById>(_deleteTodoById),
+      TypedMiddleware<AppState, MarkTodoAsComplete>(_markTodoAsComplete),
     ];
   }
 
   Future<void> _deleteTodoById(Store<AppState> store, DeleteTodoById action, NextDispatcher next) async {
     next(action);
     await _todoApi.deleteById(action.id);
+    store.dispatch(const GetAllTodos.start());
+  }
+
+  Future<void> _markTodoAsComplete(Store<AppState> store, MarkTodoAsComplete action, NextDispatcher next) async {
+    next(action);
+    await _todoApi.markAsComplete(id: action.id, isComplete: action.isComplete);
     store.dispatch(const GetAllTodos.start());
   }
 }

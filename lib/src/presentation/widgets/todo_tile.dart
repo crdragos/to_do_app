@@ -24,7 +24,7 @@ class TodoTile extends StatelessWidget {
         children: <Widget>[
           Checkbox(
             value: todo.isComplete,
-            onChanged: (bool? value) => print('$value'),
+            onChanged: (bool? value) => store.dispatch(MarkTodoAsComplete(id: todo.id, isComplete: value!)),
           ),
           Expanded(
             child: Column(
