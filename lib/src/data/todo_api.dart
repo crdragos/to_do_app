@@ -17,4 +17,8 @@ class TodoApi {
     await _todosBox.put(todo.id, todo);
     return todo;
   }
+
+  Future<void> deleteById(String id) async {
+    await _todosBox.delete(id);
+  }
 }

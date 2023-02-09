@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/src/store.dart';
+import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/models/index.dart';
 
 class TodoTile extends StatelessWidget {
@@ -9,6 +12,8 @@ class TodoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Store<AppState> store = StoreProvider.of<AppState>(context);
+
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -50,7 +55,7 @@ class TodoTile extends StatelessWidget {
           const Spacer(),
           IconButton(
             icon: Icon(CupertinoIcons.bin_xmark, color: Colors.red.shade300),
-            onPressed: () {},
+            onPressed: () => store.dispatch(DeleteTodoById(id: todo.id)),
           ),
         ],
       ),
