@@ -132,6 +132,68 @@ abstract class DeleteTodoById$ implements DeleteTodoById {
 }
 
 /// @nodoc
+mixin _$DeleteCompletedTodos {}
+
+/// @nodoc
+abstract class $DeleteCompletedTodosCopyWith<$Res> {
+  factory $DeleteCompletedTodosCopyWith(DeleteCompletedTodos value,
+          $Res Function(DeleteCompletedTodos) then) =
+      _$DeleteCompletedTodosCopyWithImpl<$Res, DeleteCompletedTodos>;
+}
+
+/// @nodoc
+class _$DeleteCompletedTodosCopyWithImpl<$Res,
+        $Val extends DeleteCompletedTodos>
+    implements $DeleteCompletedTodosCopyWith<$Res> {
+  _$DeleteCompletedTodosCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$DeleteCompletedTodos$CopyWith<$Res> {
+  factory _$$DeleteCompletedTodos$CopyWith(_$DeleteCompletedTodos$ value,
+          $Res Function(_$DeleteCompletedTodos$) then) =
+      __$$DeleteCompletedTodos$CopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteCompletedTodos$CopyWithImpl<$Res>
+    extends _$DeleteCompletedTodosCopyWithImpl<$Res, _$DeleteCompletedTodos$>
+    implements _$$DeleteCompletedTodos$CopyWith<$Res> {
+  __$$DeleteCompletedTodos$CopyWithImpl(_$DeleteCompletedTodos$ _value,
+      $Res Function(_$DeleteCompletedTodos$) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteCompletedTodos$ implements DeleteCompletedTodos$ {
+  const _$DeleteCompletedTodos$();
+
+  @override
+  String toString() {
+    return 'DeleteCompletedTodos()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DeleteCompletedTodos$);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+}
+
+abstract class DeleteCompletedTodos$ implements DeleteCompletedTodos {
+  const factory DeleteCompletedTodos$() = _$DeleteCompletedTodos$;
+}
+
+/// @nodoc
 mixin _$GetAllTodos {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

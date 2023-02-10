@@ -5,6 +5,7 @@ import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/models/index.dart';
 
 part 'delete_by_id.dart';
+part 'delete_completed_todos.dart';
 part 'get_all.dart';
 part 'index.freezed.dart';
 part 'mark_as_complete.dart';

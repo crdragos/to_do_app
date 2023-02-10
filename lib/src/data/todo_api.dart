@@ -22,6 +22,14 @@ class TodoApi {
     await _todosBox.delete(id);
   }
 
+  Future<void> deleteCompletedTodos() async {
+    final List<String> completedTodos = _todosBox.values //
+        .where((Todo todo) => todo.isComplete)
+        .map((Todo todo) => todo.id)
+        .toList();
+    await _todosBox.deleteAll(completedTodos);
+  }
+
   Future<void> markAsComplete({required String id, required bool isComplete}) async {
     final Todo? todo = _todosBox.get(id);
 

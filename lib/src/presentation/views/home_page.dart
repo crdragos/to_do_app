@@ -57,6 +57,10 @@ class _HomePageState extends State<HomePage> {
               );
             },
           ),
+          IconButton(
+            icon: const Icon(CupertinoIcons.bin_xmark),
+            onPressed: () => store.dispatch(const DeleteCompletedTodos()),
+          ),
         ],
       ),
       body: TodosContainer(
