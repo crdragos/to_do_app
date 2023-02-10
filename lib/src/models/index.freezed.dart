@@ -123,12 +123,13 @@ class __$$Todo$CopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$Todo$>
 
 /// @nodoc
 @JsonSerializable()
-class _$Todo$ implements Todo$ {
+class _$Todo$ extends Todo$ {
   const _$Todo$(
       {required this.id,
       required this.title,
       this.notes,
-      this.isComplete = false});
+      this.isComplete = false})
+      : super._();
 
   factory _$Todo$.fromJson(Map<String, dynamic> json) => _$$Todo$FromJson(json);
 
@@ -177,12 +178,13 @@ class _$Todo$ implements Todo$ {
   }
 }
 
-abstract class Todo$ implements Todo {
+abstract class Todo$ extends Todo {
   const factory Todo$(
       {required final String id,
       required final String title,
       final String? notes,
       final bool isComplete}) = _$Todo$;
+  const Todo$._() : super._();
 
   factory Todo$.fromJson(Map<String, dynamic> json) = _$Todo$.fromJson;
 

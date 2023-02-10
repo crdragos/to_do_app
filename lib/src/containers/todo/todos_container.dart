@@ -11,7 +11,7 @@ class TodosContainer extends StatelessWidget {
       builder: builder,
       converter: (Store<AppState> store) {
         return TodosViewModel(
-          todos: store.state.todosSate.todos.values.toList(),
+          todos: store.state.todosSate.todos.values.toList()..sort(),
           isLoading: store.state.pending.contains(GetAllTodos.pendingKey),
         );
       },
