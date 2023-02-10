@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/src/store.dart';
+import 'package:redux/redux.dart';
 import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/models/index.dart';
 

@@ -11,8 +11,14 @@ class TodoTypeAdapter extends TypeAdapter<Todo> {
     final String id = reader.readString();
     final String text = reader.readString();
     final String notes = reader.readString();
+    final bool isComplete = reader.readBool();
 
-    return Todo(id: id, title: text, notes: notes.isEmpty ? null : notes);
+    return Todo(
+      id: id,
+      title: text,
+      notes: notes.isEmpty ? null : notes,
+      isComplete: isComplete,
+    );
   }
 
   @override
@@ -20,6 +26,7 @@ class TodoTypeAdapter extends TypeAdapter<Todo> {
     writer
       ..writeString(obj.id)
       ..writeString(obj.title)
-      ..writeString(obj.notes ?? '');
+      ..writeString(obj.notes ?? '')
+      ..writeBool(obj.isComplete);
   }
 }
