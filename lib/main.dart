@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:to_do_app/src/init/init.dart';
 import 'package:to_do_app/src/models/index.dart';
+import 'package:to_do_app/src/presentation/theme.dart';
 import 'package:to_do_app/src/presentation/views/home_page.dart';
 
 Future<void> main() async {
@@ -35,6 +36,7 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: HomePage(),
+        theme: appTheme,
       ),
     );
   }

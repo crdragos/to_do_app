@@ -13,48 +13,33 @@ class TodoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Store<AppState> store = StoreProvider.of<AppState>(context);
+    final ThemeData theme = Theme.of(context);
 
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Colors.grey.shade200,
+        color: theme.colorScheme.background,
       ),
       child: Row(
         children: <Widget>[
           Checkbox(
             value: todo.isComplete,
+            activeColor: Colors.transparent,
+            checkColor: theme.colorScheme.primary,
             onChanged: (bool? value) => store.dispatch(MarkTodoAsComplete(id: todo.id, isComplete: value!)),
           ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  todo.title,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    decoration: !todo.isComplete ? null : TextDecoration.lineThrough,
-                  ),
-                ),
-                if (todo.notes != null)
-                  Text(
-                    todo.notes!,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      decoration: !todo.isComplete ? null : TextDecoration.lineThrough,
-                    ),
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-              ],
+          Text(
+            todo.title,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              decoration: !todo.isComplete ? null : TextDecoration.lineThrough,
             ),
           ),
           const Spacer(),
           IconButton(
-            icon: Icon(CupertinoIcons.bin_xmark, color: Colors.red.shade300),
+            icon: Icon(CupertinoIcons.bin_xmark, color: theme.colorScheme.error),
             onPressed: () => store.dispatch(DeleteTodoById(id: todo.id)),
           ),
         ],
