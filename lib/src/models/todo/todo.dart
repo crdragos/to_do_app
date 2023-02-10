@@ -23,6 +23,4 @@ class Todo with _$Todo implements Comparable<Todo> {
     }
     return 1;
   }
-
-
 }

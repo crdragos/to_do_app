@@ -14,3 +14,7 @@ This is a simple project that represents a mobile applications for managing your
 - [x] Delete todo
 - [x] Delete completed todos
 - [x] Store all todos in phone local storage using Hive
+
+## Nice to have
+- [ ] Internalization
+- [ ] GetIt
