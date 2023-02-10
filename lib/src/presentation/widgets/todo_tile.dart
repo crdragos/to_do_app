@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/src/store.dart';
+import 'package:redux/redux.dart';
 import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/models/index.dart';
 
@@ -24,7 +24,7 @@ class TodoTile extends StatelessWidget {
         children: <Widget>[
           Checkbox(
             value: todo.isComplete,
-            onChanged: (bool? value) => print('$value'),
+            onChanged: (bool? value) => store.dispatch(MarkTodoAsComplete(id: todo.id, isComplete: value!)),
           ),
           Expanded(
             child: Column(

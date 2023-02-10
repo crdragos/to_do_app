@@ -710,6 +710,143 @@ abstract class GetAllTodosError
 }
 
 /// @nodoc
+mixin _$MarkTodoAsComplete {
+  String get id => throw _privateConstructorUsedError;
+  bool get isComplete => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $MarkTodoAsCompleteCopyWith<MarkTodoAsComplete> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MarkTodoAsCompleteCopyWith<$Res> {
+  factory $MarkTodoAsCompleteCopyWith(
+          MarkTodoAsComplete value, $Res Function(MarkTodoAsComplete) then) =
+      _$MarkTodoAsCompleteCopyWithImpl<$Res, MarkTodoAsComplete>;
+  @useResult
+  $Res call({String id, bool isComplete});
+}
+
+/// @nodoc
+class _$MarkTodoAsCompleteCopyWithImpl<$Res, $Val extends MarkTodoAsComplete>
+    implements $MarkTodoAsCompleteCopyWith<$Res> {
+  _$MarkTodoAsCompleteCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? isComplete = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      isComplete: null == isComplete
+          ? _value.isComplete
+          : isComplete // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MarkTodoAsComplete$CopyWith<$Res>
+    implements $MarkTodoAsCompleteCopyWith<$Res> {
+  factory _$$MarkTodoAsComplete$CopyWith(_$MarkTodoAsComplete$ value,
+          $Res Function(_$MarkTodoAsComplete$) then) =
+      __$$MarkTodoAsComplete$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, bool isComplete});
+}
+
+/// @nodoc
+class __$$MarkTodoAsComplete$CopyWithImpl<$Res>
+    extends _$MarkTodoAsCompleteCopyWithImpl<$Res, _$MarkTodoAsComplete$>
+    implements _$$MarkTodoAsComplete$CopyWith<$Res> {
+  __$$MarkTodoAsComplete$CopyWithImpl(
+      _$MarkTodoAsComplete$ _value, $Res Function(_$MarkTodoAsComplete$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? isComplete = null,
+  }) {
+    return _then(_$MarkTodoAsComplete$(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      isComplete: null == isComplete
+          ? _value.isComplete
+          : isComplete // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MarkTodoAsComplete$ implements MarkTodoAsComplete$ {
+  const _$MarkTodoAsComplete$({required this.id, required this.isComplete});
+
+  @override
+  final String id;
+  @override
+  final bool isComplete;
+
+  @override
+  String toString() {
+    return 'MarkTodoAsComplete(id: $id, isComplete: $isComplete)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkTodoAsComplete$ &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.isComplete, isComplete) ||
+                other.isComplete == isComplete));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id, isComplete);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MarkTodoAsComplete$CopyWith<_$MarkTodoAsComplete$> get copyWith =>
+      __$$MarkTodoAsComplete$CopyWithImpl<_$MarkTodoAsComplete$>(
+          this, _$identity);
+}
+
+abstract class MarkTodoAsComplete$ implements MarkTodoAsComplete {
+  const factory MarkTodoAsComplete$(
+      {required final String id,
+      required final bool isComplete}) = _$MarkTodoAsComplete$;
+
+  @override
+  String get id;
+  @override
+  bool get isComplete;
+  @override
+  @JsonKey(ignore: true)
+  _$$MarkTodoAsComplete$CopyWith<_$MarkTodoAsComplete$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$SaveTodo {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

@@ -21,4 +21,14 @@ class TodoApi {
   Future<void> deleteById(String id) async {
     await _todosBox.delete(id);
   }
+
+  Future<void> markAsComplete({required String id, required bool isComplete}) async {
+    final Todo? todo = _todosBox.get(id);
+
+    if (todo == null) {
+      return;
+    }
+
+    await _todosBox.put(id, todo.copyWith(isComplete: isComplete));
+  }
 }
