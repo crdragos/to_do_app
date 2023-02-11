@@ -1,9 +1,11 @@
 import 'package:hive/hive.dart';
+import 'package:injectable/injectable.dart';
 import 'package:to_do_app/src/models/index.dart';
 import 'package:uuid/uuid.dart';
 
+@injectable
 class TodoApi {
-  const TodoApi({required Box<Todo> todosBox}) : _todosBox = todosBox;
+  const TodoApi({@Named('todosBox') required Box<Todo> todosBox}) : _todosBox = todosBox;
 
   final Box<Todo> _todosBox;
 

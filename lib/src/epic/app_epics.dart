@@ -1,16 +1,16 @@
+import 'package:injectable/injectable.dart';
 import 'package:redux_epics/redux_epics.dart';
-import 'package:to_do_app/src/data/index.dart';
 import 'package:to_do_app/src/epic/todo_epics.dart';
 import 'package:to_do_app/src/models/index.dart';
 
-class AppEpics {
-  const AppEpics({required TodoApi todoApi}) : _todoApi = todoApi;
+@injectable
+class AppEpics implements EpicClass<AppState> {
+  const AppEpics({required this.todoEpics});
 
-  final TodoApi _todoApi;
+  final TodoEpics todoEpics;
 
-  Epic<AppState> get epics {
-    return combineEpics(<Epic<AppState>>[
-      TodoEpics(todoApi: _todoApi).epics,
-    ]);
+  @override
+  Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
+    return combineEpics<AppState>(<Epic<AppState>>[todoEpics])(actions, store);
   }
 }
