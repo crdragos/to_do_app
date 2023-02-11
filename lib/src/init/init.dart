@@ -15,20 +15,13 @@ import 'package:to_do_app/src/models/index.dart';
 import 'package:to_do_app/src/reducer/reducer.dart';
 import 'package:to_do_app/src/util/injection.dart';
 
-class InitResult {
-  InitResult._(this.store, this.actions);
-
-  final Store<AppState> store;
-  final Stream<AppAction> actions;
-}
-
 void _initHive(String dirPath) {
   Hive
     ..init(path.join(dirPath, 'hive'))
     ..registerAdapter(TodoTypeAdapter(1));
 }
 
-Future<InitResult> init() async {
+Future<GetIt> init() async {
   final Directory appDir = await getApplicationSupportDirectory();
   final String dirPath = appDir.path;
 
@@ -58,5 +51,5 @@ Future<InitResult> init() async {
     ],
   )..dispatch(const GetAllTodos.start());
 
-  return InitResult._(store, actions.stream);
+  return getIt..registerSingleton(store);
 }

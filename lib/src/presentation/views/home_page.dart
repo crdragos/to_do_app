@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
 import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/containers/index.dart';
 import 'package:to_do_app/src/models/index.dart';
 import 'package:to_do_app/src/presentation/utils/app_strings.dart';
 import 'package:to_do_app/src/presentation/widgets/custom_material_bottom_sheet.dart';
 import 'package:to_do_app/src/presentation/widgets/todo_tile.dart';
+import 'package:to_do_app/src/util/extensions.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -22,8 +21,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final Store<AppState> store = StoreProvider.of<AppState>(context);
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(AppStrings.homePageTitle),
@@ -49,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                       final String notes = widget._notesController.text;
                       widget._titleController.clear();
                       widget._notesController.clear();
-                      store.dispatch(SaveTodo.start(title: title, notes: notes));
+                      context.dispatch(SaveTodo.start(title: title, notes: notes));
                       Navigator.of(context).pop();
                     },
                   );
@@ -59,7 +56,7 @@ class _HomePageState extends State<HomePage> {
           ),
           IconButton(
             icon: const Icon(CupertinoIcons.bin_xmark),
-            onPressed: () => store.dispatch(const DeleteCompletedTodos()),
+            onPressed: () => context.dispatch(const DeleteCompletedTodos()),
           ),
         ],
       ),
