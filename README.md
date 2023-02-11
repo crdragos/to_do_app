@@ -16,5 +16,5 @@ This is a simple project that represents a mobile applications for managing your
 - [x] Store all todos in phone local storage using Hive
 
 ## Nice to have
+- [x] GetIt
 - [ ] Internalization
-- [ ] GetIt
