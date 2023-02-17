@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/containers/index.dart';
 import 'package:to_do_app/src/models/index.dart';
+import 'package:to_do_app/src/presentation/theme.dart';
 import 'package:to_do_app/src/presentation/utils/app_strings.dart';
 import 'package:to_do_app/src/presentation/widgets/custom_material_bottom_sheet.dart';
 import 'package:to_do_app/src/presentation/widgets/todo_tile.dart';
@@ -21,12 +22,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Scaffold(
+      backgroundColor: theme.colorScheme.background,
       appBar: AppBar(
         title: const Text(AppStrings.homePageTitle),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(CupertinoIcons.add),
+            icon: const Icon(CupertinoIcons.add, color: AppColors.lime),
             onPressed: () {
               showModalBottomSheet<void>(
                 context: context,
@@ -55,7 +59,7 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           IconButton(
-            icon: const Icon(CupertinoIcons.bin_xmark),
+            icon: Icon(CupertinoIcons.bin_xmark, color: theme.colorScheme.error),
             onPressed: () => context.dispatch(const DeleteCompletedTodos()),
           ),
         ],

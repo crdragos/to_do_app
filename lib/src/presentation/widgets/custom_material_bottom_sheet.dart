@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/src/presentation/theme.dart';
 import 'package:to_do_app/src/presentation/utils/app_strings.dart';
 import 'package:to_do_app/src/presentation/widgets/material_bottom_sheet_button.dart';
 
@@ -18,11 +19,13 @@ class CustomMaterialBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Container(
       padding: const EdgeInsets.all(32),
-      decoration: BoxDecoration(
-        color: Colors.grey.shade200,
-        borderRadius: const BorderRadius.only(
+      decoration: const BoxDecoration(
+        color: AppColors.lightCharcoal,
+        borderRadius: BorderRadius.only(
           topRight: Radius.circular(24),
           topLeft: Radius.circular(24),
         ),
@@ -55,13 +58,13 @@ class CustomMaterialBottomSheet extends StatelessWidget {
             children: <Widget>[
               MaterialBottomSheetButton(
                 text: AppStrings.save,
-                color: Colors.green.shade300,
+                color: AppColors.lime,
                 onTap: onAddPressed,
               ),
               const SizedBox(width: 8),
               MaterialBottomSheetButton(
                 text: AppStrings.cancel,
-                color: Colors.red.shade300,
+                color: theme.colorScheme.error,
                 onTap: onCancelPressed,
               ),
             ],
