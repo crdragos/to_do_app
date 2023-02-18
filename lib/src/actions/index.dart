@@ -1,3 +1,4 @@
+export 'settings/index.dart';
 export 'todo/index.dart';
 
 abstract class AppAction {}

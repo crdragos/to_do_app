@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:to_do_app/generated/l10n.dart';
 import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/containers/index.dart';
 import 'package:to_do_app/src/models/index.dart';
 import 'package:to_do_app/src/presentation/theme.dart';
 import 'package:to_do_app/src/presentation/utils/app_strings.dart';
+import 'package:to_do_app/src/presentation/widgets/custom_drawer.dart';
 import 'package:to_do_app/src/presentation/widgets/custom_material_bottom_sheet.dart';
 import 'package:to_do_app/src/presentation/widgets/todo_tile.dart';
 import 'package:to_do_app/src/util/extensions.dart';
@@ -27,7 +29,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: theme.colorScheme.background,
       appBar: AppBar(
-        title: const Text(AppStrings.homePageTitle),
+        backgroundColor: theme.colorScheme.background,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: AppColors.darkCharcoal),
+        title: Text(
+          S.of(context).app_title,
+          style: const TextStyle(color: Colors.black),
+        ),
         actions: <Widget>[
           IconButton(
             icon: const Icon(CupertinoIcons.add, color: AppColors.lime),
@@ -64,6 +72,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+      drawer: CustomDrawer(context: context),
       body: TodosContainer(
         builder: (BuildContext context, TodosViewModel vm) {
           if (vm.isLoading) {

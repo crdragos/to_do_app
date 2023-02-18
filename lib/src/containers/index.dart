@@ -9,3 +9,4 @@ import 'package:to_do_app/src/models/index.dart';
 
 part 'todo/todos_container.dart';
 part 'index.freezed.dart';
+part 'settings/settings_container.dart';

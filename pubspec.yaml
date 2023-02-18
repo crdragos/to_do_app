@@ -11,11 +11,14 @@ dependencies:
   cupertino_icons: ^1.0.5
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_redux: ^0.10.0
   freezed_annotation: ^2.2.0
   get_it: ^7.2.0
   hive: ^2.2.3
   injectable: ^2.1.0
+  intl: ^0.17.0
   json_annotation: ^4.8.0
   path: ^1.8.2
   path_provider: ^2.0.12
@@ -35,5 +38,12 @@ dev_dependencies:
   json_serializable: ^6.6.1
   very_good_analysis: ^4.0.0+1
 
+flutter_intl:
+  enabled: true
+  arb_dir: assets/l10n
+
 flutter:
   uses-material-design: true
+  assets:
+    - assets/
+    - assets/jpg/
