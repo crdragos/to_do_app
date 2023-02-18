@@ -5,6 +5,7 @@ import 'package:redux/redux.dart';
 import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/models/index.dart';
 import 'package:to_do_app/src/models/settings/language_enum.dart';
+import 'package:to_do_app/src/models/settings/theme_enum.dart';
 
 extension BuildContextExtension on BuildContext {
   Store<AppState> get store => get<Store<AppState>>();
@@ -40,6 +41,28 @@ extension LanguageEnumExtention on LanguageEnum {
         return LanguageEnum.romanian;
       default:
         return LanguageEnum.english;
+    }
+  }
+}
+
+extension ThemeEnumExtention on ThemeEnum {
+  String get displayName {
+    switch (this) {
+      case ThemeEnum.dark:
+        return 'dark';
+      case ThemeEnum.light:
+        return 'light';
+    }
+  }
+
+  ThemeEnum fromString(String code) {
+    switch (code) {
+      case 'dark':
+        return ThemeEnum.dark;
+      case 'light':
+        return ThemeEnum.light;
+      default:
+        return ThemeEnum.light;
     }
   }
 }

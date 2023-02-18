@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:to_do_app/generated/l10n.dart';
 import 'package:to_do_app/src/actions/settings/index.dart';
 import 'package:to_do_app/src/models/settings/language_enum.dart';
+import 'package:to_do_app/src/models/settings/theme_enum.dart';
 import 'package:to_do_app/src/presentation/assets.dart';
 import 'package:to_do_app/src/presentation/theme.dart';
 import 'package:to_do_app/src/util/extensions.dart';
@@ -12,10 +13,15 @@ class CustomDrawer extends Drawer {
   final BuildContext context;
 
   @override
-  Color? get backgroundColor => AppColors.lightCharcoal;
+  Color? get backgroundColor {
+    return context.store.state.settingsState.theme != ThemeEnum.light.displayName
+        ? AppColors.darkCharcoal
+        : AppColors.lightCharcoal;
+  }
 
   @override
   Widget? get child {
+    final ThemeData theme = Theme.of(context);
     return ListView(
       padding: EdgeInsets.zero,
       children: <Widget>[
@@ -24,9 +30,10 @@ class CustomDrawer extends Drawer {
           child: DrawerHeader(
             child: Text(
               S.of(context).settings,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 24,
+                color: theme.colorScheme.inversePrimary,
               ),
             ),
           ),
@@ -35,9 +42,10 @@ class CustomDrawer extends Drawer {
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           child: Text(
             S.of(context).language,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
+              color: theme.colorScheme.inversePrimary,
             ),
           ),
         ),
@@ -53,7 +61,10 @@ class CustomDrawer extends Drawer {
           },
           title: Text(
             S.of(context).english,
-            style: const TextStyle(fontSize: 20),
+            style: TextStyle(
+              fontSize: 20,
+              color: theme.colorScheme.inversePrimary,
+            ),
           ),
         ),
         ListTile(
@@ -68,7 +79,10 @@ class CustomDrawer extends Drawer {
           },
           title: Text(
             S.of(context).french,
-            style: const TextStyle(fontSize: 20),
+            style: TextStyle(
+              fontSize: 20,
+              color: theme.colorScheme.inversePrimary,
+            ),
           ),
         ),
         ListTile(
@@ -83,7 +97,10 @@ class CustomDrawer extends Drawer {
           },
           title: Text(
             S.of(context).romanian,
-            style: const TextStyle(fontSize: 20),
+            style: TextStyle(
+              fontSize: 20,
+              color: theme.colorScheme.inversePrimary,
+            ),
           ),
         ),
         const Divider(),
@@ -91,35 +108,56 @@ class CustomDrawer extends Drawer {
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           child: Text(
             S.of(context).theme,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
+              color: theme.colorScheme.inversePrimary,
             ),
           ),
         ),
         ListTile(
-          leading: const Icon(
-            Icons.dark_mode_outlined,
-            color: AppColors.darkCharcoal,
+          onTap: () {
+            context.dispatch(SetTheme(theme: ThemeEnum.dark.displayName));
+            Navigator.of(context).pop();
+          },
+          leading: Icon(
+            context.state.settingsState.theme != ThemeEnum.dark.displayName
+                ? Icons.dark_mode_outlined
+                : Icons.dark_mode,
+            color: theme.colorScheme.inversePrimary,
           ),
-          trailing: const Icon(Icons.check, color: AppColors.darkCharcoal),
+          trailing: Icon(
+            context.state.settingsState.theme != ThemeEnum.dark.displayName ? null : Icons.check,
+            color: theme.colorScheme.inversePrimary,
+          ),
           title: Text(
             S.of(context).dark,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 20,
+              color: theme.colorScheme.inversePrimary,
             ),
           ),
         ),
         ListTile(
-          leading: const Icon(
-            Icons.light_mode,
-            color: AppColors.darkCharcoal,
+          onTap: () {
+            context.dispatch(SetTheme(theme: ThemeEnum.light.displayName));
+            Navigator.of(context).pop();
+          },
+          leading: Icon(
+            context.state.settingsState.theme != ThemeEnum.light.displayName
+                ? Icons.light_mode_outlined
+                : Icons.light_mode,
+            color: theme.colorScheme.inversePrimary,
           ),
-          trailing: const Icon(Icons.check, color: AppColors.darkCharcoal),
+          trailing: Icon(
+            context.state.settingsState.theme != ThemeEnum.light.displayName ? null : Icons.check,
+            color: theme.colorScheme.inversePrimary,
+          ),
           title: Text(
             S.of(context).light,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 20,
+              color: theme.colorScheme.inversePrimary,
             ),
           ),
         ),

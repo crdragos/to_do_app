@@ -4,7 +4,7 @@ part of models;
 class SettingsState with _$SettingsState {
   const factory SettingsState({
     @Default('en') String language,
-    @Default('light') String theme,
+    @Default('dark') String theme,
   }) = SettingsState$;
 
   factory SettingsState.fromJson(Map<dynamic, dynamic> json) =>

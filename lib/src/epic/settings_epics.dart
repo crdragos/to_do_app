@@ -14,6 +14,7 @@ class SettingsEpics implements EpicClass<AppState> {
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics<AppState>(<Epic<AppState>>[
       TypedEpic<AppState, GetLanguageStart>(_getLanguageStart),
+      TypedEpic<AppState, GetThemeStart>(_getThemeStart),
     ])(actions, store);
   }
 
@@ -21,5 +22,11 @@ class SettingsEpics implements EpicClass<AppState> {
     return actions
         .asyncMap((GetLanguageStart action) => _settingsApi.getLanguage())
         .map((String language) => GetLanguage.successful(language));
+  }
+
+  Stream<AppAction> _getThemeStart(Stream<GetThemeStart> actions, EpicStore<AppState> store) {
+    return actions
+        .asyncMap((GetThemeStart action) => _settingsApi.getTheme())
+        .map((String theme) => GetTheme.successful(theme));
   }
 }

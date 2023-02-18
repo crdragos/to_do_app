@@ -28,12 +28,14 @@ Future<GetIt> init() async {
   _initHive(dirPath);
   final Box<Todo> todosBox = await Hive.openBox<Todo>('todosBox');
   final Box<String> languageBox = await Hive.openBox<String>('languageBox');
+  final Box<String> themeBox = await Hive.openBox<String>('themeBox');
 
   final StreamController<AppAction> actions = StreamController<AppAction>.broadcast();
 
   final GetIt getIt = GetIt.instance
     ..registerSingleton(todosBox, instanceName: 'todosBox')
     ..registerSingleton(languageBox, instanceName: 'languageBox')
+    ..registerSingleton(themeBox, instanceName: 'themeBox')
     ..registerSingleton(actions);
 
   configureDependencies(getIt);
@@ -53,7 +55,8 @@ Future<GetIt> init() async {
     ],
   )
     ..dispatch(const GetAllTodos.start())
-    ..dispatch(const GetLanguage.start());
+    ..dispatch(const GetLanguage.start())
+    ..dispatch(const GetTheme.start());
 
   return getIt..registerSingleton(store);
 }

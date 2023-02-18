@@ -26,9 +26,10 @@ class MaterialBottomSheetButton extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
+                color: Theme.of(context).colorScheme.inversePrimary,
               ),
             ),
           ),

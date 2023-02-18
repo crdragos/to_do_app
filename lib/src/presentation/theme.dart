@@ -8,20 +8,38 @@ class AppColors {
   static const Color lime = Color(0xFF32CD32);
 }
 
-ThemeData get appTheme {
-  const Color primaryColor = AppColors.darkCharcoal;
+ThemeData get lightTheme {
   final ThemeData themeData = ThemeData.light();
-
   return ThemeData.light().copyWith(
-    primaryColor: primaryColor,
+    primaryColor: AppColors.lightCharcoal,
     colorScheme: const ColorScheme.light(
-      primary: primaryColor,
+      primary: AppColors.lightCharcoal,
+      inversePrimary: AppColors.darkCharcoal,
       secondary: AppColors.midCharcoal,
+      tertiary: AppColors.lime,
       background: AppColors.lightCharcoal,
       error: AppColors.crimson,
     ),
     progressIndicatorTheme: themeData.progressIndicatorTheme.copyWith(
-      color: primaryColor,
+      color: AppColors.darkCharcoal,
+    ),
+  );
+}
+
+ThemeData get darkTheme {
+  final ThemeData themeData = ThemeData.dark();
+  return ThemeData.light().copyWith(
+    primaryColor: AppColors.darkCharcoal,
+    colorScheme: const ColorScheme.light(
+      primary: AppColors.darkCharcoal,
+      inversePrimary: AppColors.lightCharcoal,
+      secondary: AppColors.midCharcoal,
+      tertiary: AppColors.lime,
+      background: AppColors.darkCharcoal,
+      error: AppColors.crimson,
+    ),
+    progressIndicatorTheme: themeData.progressIndicatorTheme.copyWith(
+      color: AppColors.lightCharcoal,
     ),
   );
 }

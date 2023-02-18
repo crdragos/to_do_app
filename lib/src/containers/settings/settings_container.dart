@@ -11,6 +11,7 @@ class SettingsContainer extends StatelessWidget {
       builder: builder,
       converter: (Store<AppState> store) {
         return SettingsViewModel(
+          theme: store.state.settingsState.theme,
           language: store.state.settingsState.language,
         );
       },
@@ -22,5 +23,6 @@ class SettingsContainer extends StatelessWidget {
 class SettingsViewModel with _$SettingsViewModel {
   const factory SettingsViewModel({
     required String language,
+    required String theme,
   }) = SettingsViewModel$;
 }

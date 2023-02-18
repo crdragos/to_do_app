@@ -162,6 +162,7 @@ abstract class TodosViewModel$ implements TodosViewModel {
 /// @nodoc
 mixin _$SettingsViewModel {
   String get language => throw _privateConstructorUsedError;
+  String get theme => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SettingsViewModelCopyWith<SettingsViewModel> get copyWith =>
@@ -174,7 +175,7 @@ abstract class $SettingsViewModelCopyWith<$Res> {
           SettingsViewModel value, $Res Function(SettingsViewModel) then) =
       _$SettingsViewModelCopyWithImpl<$Res, SettingsViewModel>;
   @useResult
-  $Res call({String language});
+  $Res call({String language, String theme});
 }
 
 /// @nodoc
@@ -191,11 +192,16 @@ class _$SettingsViewModelCopyWithImpl<$Res, $Val extends SettingsViewModel>
   @override
   $Res call({
     Object? language = null,
+    Object? theme = null,
   }) {
     return _then(_value.copyWith(
       language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      theme: null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -209,7 +215,7 @@ abstract class _$$SettingsViewModel$CopyWith<$Res>
       __$$SettingsViewModel$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String language});
+  $Res call({String language, String theme});
 }
 
 /// @nodoc
@@ -224,11 +230,16 @@ class __$$SettingsViewModel$CopyWithImpl<$Res>
   @override
   $Res call({
     Object? language = null,
+    Object? theme = null,
   }) {
     return _then(_$SettingsViewModel$(
       language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      theme: null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -237,14 +248,16 @@ class __$$SettingsViewModel$CopyWithImpl<$Res>
 /// @nodoc
 
 class _$SettingsViewModel$ implements SettingsViewModel$ {
-  const _$SettingsViewModel$({required this.language});
+  const _$SettingsViewModel$({required this.language, required this.theme});
 
   @override
   final String language;
+  @override
+  final String theme;
 
   @override
   String toString() {
-    return 'SettingsViewModel(language: $language)';
+    return 'SettingsViewModel(language: $language, theme: $theme)';
   }
 
   @override
@@ -253,11 +266,12 @@ class _$SettingsViewModel$ implements SettingsViewModel$ {
         (other.runtimeType == runtimeType &&
             other is _$SettingsViewModel$ &&
             (identical(other.language, language) ||
-                other.language == language));
+                other.language == language) &&
+            (identical(other.theme, theme) || other.theme == theme));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, language);
+  int get hashCode => Object.hash(runtimeType, language, theme);
 
   @JsonKey(ignore: true)
   @override
@@ -268,11 +282,14 @@ class _$SettingsViewModel$ implements SettingsViewModel$ {
 }
 
 abstract class SettingsViewModel$ implements SettingsViewModel {
-  const factory SettingsViewModel$({required final String language}) =
-      _$SettingsViewModel$;
+  const factory SettingsViewModel$(
+      {required final String language,
+      required final String theme}) = _$SettingsViewModel$;
 
   @override
   String get language;
+  @override
+  String get theme;
   @override
   @JsonKey(ignore: true)
   _$$SettingsViewModel$CopyWith<_$SettingsViewModel$> get copyWith =>

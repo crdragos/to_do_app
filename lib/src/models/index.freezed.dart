@@ -299,7 +299,7 @@ class __$$SettingsState$CopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SettingsState$ implements SettingsState$ {
-  const _$SettingsState$({this.language = 'en', this.theme = 'light'});
+  const _$SettingsState$({this.language = 'en', this.theme = 'dark'});
 
   factory _$SettingsState$.fromJson(Map<String, dynamic> json) =>
       _$$SettingsState$FromJson(json);

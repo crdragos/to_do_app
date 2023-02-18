@@ -11,6 +11,7 @@ class SettingsMiddleware {
   List<Middleware<AppState>> get middleware {
     return <Middleware<AppState>>[
       TypedMiddleware<AppState, SetLanguage>(_setLanguage),
+      TypedMiddleware<AppState, SetTheme>(_setTheme),
     ];
   }
 
@@ -18,5 +19,11 @@ class SettingsMiddleware {
     next(action);
     await _settingsApi.setLanguage(action.language);
     store.dispatch(const GetLanguage.start());
+  }
+
+  Future<void> _setTheme(Store<AppState> store, SetTheme action, NextDispatcher next) async {
+    next(action);
+    await _settingsApi.setTheme(action.theme);
+    store.dispatch(const GetTheme.start());
   }
 }

@@ -30,10 +30,10 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: theme.colorScheme.background,
         elevation: 0,
-        iconTheme: const IconThemeData(color: AppColors.darkCharcoal),
+        iconTheme: IconThemeData(color: theme.colorScheme.inversePrimary),
         title: Text(
           S.of(context).app_title,
-          style: const TextStyle(color: Colors.black),
+          style: TextStyle(color: theme.colorScheme.inversePrimary),
         ),
         actions: <Widget>[
           IconButton(
@@ -78,7 +78,16 @@ class _HomePageState extends State<HomePage> {
             return const Center(child: CircularProgressIndicator());
           }
           if (vm.todos.isEmpty) {
-            return Center(child: Text(S.of(context).no_todos));
+            return Center(
+              child: Text(
+                S.of(context).no_todos,
+                style: TextStyle(
+                  color: theme.colorScheme.inversePrimary,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 22,
+                ),
+              ),
+            );
           }
           return ListView.separated(
             padding: const EdgeInsets.all(16),

@@ -1,7 +1,7 @@
 {
   "@@locale": "ro",
-  "app_title": "De facut",
-  "no_todos": "Nu exista niciun todo",
+  "app_title": "Activitati",
+  "no_todos": "Nu exista nicio activitate",
   "title_hint": "Titlu",
   "notes_hint": "Notite",
   "save": "Salveaza",

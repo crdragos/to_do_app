@@ -586,6 +586,573 @@ abstract class GetLanguageError
 }
 
 /// @nodoc
+mixin _$GetTheme {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String theme, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String theme, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String theme, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetThemeStart value) start,
+    required TResult Function(GetThemeSuccessful value) successful,
+    required TResult Function(GetThemeError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetThemeStart value)? start,
+    TResult? Function(GetThemeSuccessful value)? successful,
+    TResult? Function(GetThemeError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetThemeStart value)? start,
+    TResult Function(GetThemeSuccessful value)? successful,
+    TResult Function(GetThemeError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GetThemeCopyWith<GetTheme> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetThemeCopyWith<$Res> {
+  factory $GetThemeCopyWith(GetTheme value, $Res Function(GetTheme) then) =
+      _$GetThemeCopyWithImpl<$Res, GetTheme>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$GetThemeCopyWithImpl<$Res, $Val extends GetTheme>
+    implements $GetThemeCopyWith<$Res> {
+  _$GetThemeCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GetThemeStartCopyWith<$Res>
+    implements $GetThemeCopyWith<$Res> {
+  factory _$$GetThemeStartCopyWith(
+          _$GetThemeStart value, $Res Function(_$GetThemeStart) then) =
+      __$$GetThemeStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$GetThemeStartCopyWithImpl<$Res>
+    extends _$GetThemeCopyWithImpl<$Res, _$GetThemeStart>
+    implements _$$GetThemeStartCopyWith<$Res> {
+  __$$GetThemeStartCopyWithImpl(
+      _$GetThemeStart _value, $Res Function(_$GetThemeStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetThemeStart(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetThemeStart implements GetThemeStart {
+  const _$GetThemeStart({this.pendingId = _kGetThemePendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetTheme.start(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetThemeStart &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetThemeStartCopyWith<_$GetThemeStart> get copyWith =>
+      __$$GetThemeStartCopyWithImpl<_$GetThemeStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String theme, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String theme, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String theme, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetThemeStart value) start,
+    required TResult Function(GetThemeSuccessful value) successful,
+    required TResult Function(GetThemeError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetThemeStart value)? start,
+    TResult? Function(GetThemeSuccessful value)? successful,
+    TResult? Function(GetThemeError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetThemeStart value)? start,
+    TResult Function(GetThemeSuccessful value)? successful,
+    TResult Function(GetThemeError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetThemeStart implements GetTheme, ActionStart {
+  const factory GetThemeStart({final String pendingId}) = _$GetThemeStart;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetThemeStartCopyWith<_$GetThemeStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetThemeSuccessfulCopyWith<$Res>
+    implements $GetThemeCopyWith<$Res> {
+  factory _$$GetThemeSuccessfulCopyWith(_$GetThemeSuccessful value,
+          $Res Function(_$GetThemeSuccessful) then) =
+      __$$GetThemeSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String theme, String pendingId});
+}
+
+/// @nodoc
+class __$$GetThemeSuccessfulCopyWithImpl<$Res>
+    extends _$GetThemeCopyWithImpl<$Res, _$GetThemeSuccessful>
+    implements _$$GetThemeSuccessfulCopyWith<$Res> {
+  __$$GetThemeSuccessfulCopyWithImpl(
+      _$GetThemeSuccessful _value, $Res Function(_$GetThemeSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? theme = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetThemeSuccessful(
+      null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetThemeSuccessful implements GetThemeSuccessful {
+  const _$GetThemeSuccessful(this.theme,
+      [this.pendingId = _kGetThemePendingId]);
+
+  @override
+  final String theme;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetTheme.successful(theme: $theme, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetThemeSuccessful &&
+            (identical(other.theme, theme) || other.theme == theme) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, theme, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetThemeSuccessfulCopyWith<_$GetThemeSuccessful> get copyWith =>
+      __$$GetThemeSuccessfulCopyWithImpl<_$GetThemeSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String theme, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(theme, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String theme, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(theme, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String theme, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(theme, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetThemeStart value) start,
+    required TResult Function(GetThemeSuccessful value) successful,
+    required TResult Function(GetThemeError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetThemeStart value)? start,
+    TResult? Function(GetThemeSuccessful value)? successful,
+    TResult? Function(GetThemeError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetThemeStart value)? start,
+    TResult Function(GetThemeSuccessful value)? successful,
+    TResult Function(GetThemeError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetThemeSuccessful implements GetTheme, ActionDone {
+  const factory GetThemeSuccessful(final String theme,
+      [final String pendingId]) = _$GetThemeSuccessful;
+
+  String get theme;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetThemeSuccessfulCopyWith<_$GetThemeSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetThemeErrorCopyWith<$Res>
+    implements $GetThemeCopyWith<$Res> {
+  factory _$$GetThemeErrorCopyWith(
+          _$GetThemeError value, $Res Function(_$GetThemeError) then) =
+      __$$GetThemeErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$GetThemeErrorCopyWithImpl<$Res>
+    extends _$GetThemeCopyWithImpl<$Res, _$GetThemeError>
+    implements _$$GetThemeErrorCopyWith<$Res> {
+  __$$GetThemeErrorCopyWithImpl(
+      _$GetThemeError _value, $Res Function(_$GetThemeError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetThemeError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetThemeError implements GetThemeError {
+  const _$GetThemeError(this.error, this.stackTrace,
+      [this.pendingId = _kGetThemePendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetTheme.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetThemeError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetThemeErrorCopyWith<_$GetThemeError> get copyWith =>
+      __$$GetThemeErrorCopyWithImpl<_$GetThemeError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String theme, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String theme, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String theme, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetThemeStart value) start,
+    required TResult Function(GetThemeSuccessful value) successful,
+    required TResult Function(GetThemeError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetThemeStart value)? start,
+    TResult? Function(GetThemeSuccessful value)? successful,
+    TResult? Function(GetThemeError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetThemeStart value)? start,
+    TResult Function(GetThemeSuccessful value)? successful,
+    TResult Function(GetThemeError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetThemeError implements GetTheme, ActionDone, ErrorAction {
+  const factory GetThemeError(final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$GetThemeError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetThemeErrorCopyWith<_$GetThemeError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$SetLanguage {
   String get language => throw _privateConstructorUsedError;
 
@@ -700,5 +1267,120 @@ abstract class SetLanguage$ implements SetLanguage {
   @override
   @JsonKey(ignore: true)
   _$$SetLanguage$CopyWith<_$SetLanguage$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$SetTheme {
+  String get theme => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetThemeCopyWith<SetTheme> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetThemeCopyWith<$Res> {
+  factory $SetThemeCopyWith(SetTheme value, $Res Function(SetTheme) then) =
+      _$SetThemeCopyWithImpl<$Res, SetTheme>;
+  @useResult
+  $Res call({String theme});
+}
+
+/// @nodoc
+class _$SetThemeCopyWithImpl<$Res, $Val extends SetTheme>
+    implements $SetThemeCopyWith<$Res> {
+  _$SetThemeCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? theme = null,
+  }) {
+    return _then(_value.copyWith(
+      theme: null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SetTheme$CopyWith<$Res> implements $SetThemeCopyWith<$Res> {
+  factory _$$SetTheme$CopyWith(
+          _$SetTheme$ value, $Res Function(_$SetTheme$) then) =
+      __$$SetTheme$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String theme});
+}
+
+/// @nodoc
+class __$$SetTheme$CopyWithImpl<$Res>
+    extends _$SetThemeCopyWithImpl<$Res, _$SetTheme$>
+    implements _$$SetTheme$CopyWith<$Res> {
+  __$$SetTheme$CopyWithImpl(
+      _$SetTheme$ _value, $Res Function(_$SetTheme$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? theme = null,
+  }) {
+    return _then(_$SetTheme$(
+      theme: null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetTheme$ implements SetTheme$ {
+  const _$SetTheme$({required this.theme});
+
+  @override
+  final String theme;
+
+  @override
+  String toString() {
+    return 'SetTheme(theme: $theme)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetTheme$ &&
+            (identical(other.theme, theme) || other.theme == theme));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, theme);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetTheme$CopyWith<_$SetTheme$> get copyWith =>
+      __$$SetTheme$CopyWithImpl<_$SetTheme$>(this, _$identity);
+}
+
+abstract class SetTheme$ implements SetTheme {
+  const factory SetTheme$({required final String theme}) = _$SetTheme$;
+
+  @override
+  String get theme;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetTheme$CopyWith<_$SetTheme$> get copyWith =>
       throw _privateConstructorUsedError;
 }

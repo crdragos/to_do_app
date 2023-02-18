@@ -8,8 +8,10 @@ import 'package:to_do_app/generated/l10n.dart';
 import 'package:to_do_app/src/containers/index.dart';
 import 'package:to_do_app/src/init/init.dart';
 import 'package:to_do_app/src/models/index.dart';
+import 'package:to_do_app/src/models/settings/theme_enum.dart';
 import 'package:to_do_app/src/presentation/theme.dart';
 import 'package:to_do_app/src/presentation/views/home_page.dart';
+import 'package:to_do_app/src/util/extensions.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -54,7 +56,7 @@ class MainApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           home: HomePage(),
-          theme: appTheme,
+          theme: vm.theme == ThemeEnum.light.displayName ? lightTheme : darkTheme,
           supportedLocales: S.delegate.supportedLocales,
           localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
             S.delegate,

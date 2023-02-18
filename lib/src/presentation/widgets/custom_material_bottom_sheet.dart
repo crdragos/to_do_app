@@ -23,9 +23,9 @@ class CustomMaterialBottomSheet extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.all(32),
-      decoration: const BoxDecoration(
-        color: AppColors.lightCharcoal,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: theme.colorScheme.primary,
+        borderRadius: const BorderRadius.only(
           topRight: Radius.circular(24),
           topLeft: Radius.circular(24),
         ),
@@ -35,22 +35,42 @@ class CustomMaterialBottomSheet extends StatelessWidget {
         children: <Widget>[
           TextField(
             decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
               hintText: S.of(context).title_hint,
+              hintStyle: TextStyle(color: theme.colorScheme.inversePrimary),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: theme.colorScheme.primary,
+                  width: 2,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(color: theme.colorScheme.inversePrimary, width: 2),
+              ),
             ),
             controller: titleController,
+            style: TextStyle(color: theme.colorScheme.inversePrimary),
           ),
           const SizedBox(height: 12),
           TextField(
             decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
               hintText: S.of(context).notes_hint,
+              hintStyle: TextStyle(color: theme.colorScheme.inversePrimary),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  color: theme.colorScheme.primary,
+                  width: 2,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(color: theme.colorScheme.inversePrimary, width: 2),
+              ),
             ),
             controller: notesController,
+            style: TextStyle(color: theme.colorScheme.inversePrimary),
           ),
           const Spacer(),
           Row(

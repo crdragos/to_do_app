@@ -31,7 +31,9 @@ extension GetItInjectableX on _i1.GetIt {
       environmentFilter,
     );
     gh.factory<_i3.SettingsApi>(() => _i3.SettingsApi(
-        languageBox: gh<_i4.Box<String>>(instanceName: 'languageBox')));
+          themeBox: gh<_i4.Box<String>>(instanceName: 'themeBox'),
+          languageBox: gh<_i4.Box<String>>(instanceName: 'languageBox'),
+        ));
     gh.factory<_i5.SettingsEpics>(
         () => _i5.SettingsEpics(settingsApi: gh<_i6.SettingsApi>()));
     gh.factory<_i7.TodoApi>(() =>

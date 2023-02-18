@@ -9,7 +9,7 @@ part of models;
 _$SettingsState$ _$$SettingsState$FromJson(Map<String, dynamic> json) =>
     _$SettingsState$(
       language: json['language'] as String? ?? 'en',
-      theme: json['theme'] as String? ?? 'light',
+      theme: json['theme'] as String? ?? 'dark',
     );
 
 Map<String, dynamic> _$$SettingsState$ToJson(_$SettingsState$ instance) =>
