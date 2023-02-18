@@ -1,4 +1,17 @@
 {
   "@@locale": "ro",
-  "app_title": "De facut"
+  "app_title": "De facut",
+  "no_todos": "Nu exista niciun todo",
+  "title_hint": "Titlu",
+  "notes_hint": "Notite",
+  "save": "Salveaza",
+  "cancel": "Anuleaza",
+  "settings": "Setari",
+  "language": "Limba",
+  "english": "Engleza",
+  "french": "Franceza",
+  "romanian": "Romana",
+  "theme": "Tema",
+  "dark": "Intunecata",
+  "light": "Luminoasa"
 }

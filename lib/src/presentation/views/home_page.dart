@@ -5,7 +5,6 @@ import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/containers/index.dart';
 import 'package:to_do_app/src/models/index.dart';
 import 'package:to_do_app/src/presentation/theme.dart';
-import 'package:to_do_app/src/presentation/utils/app_strings.dart';
 import 'package:to_do_app/src/presentation/widgets/custom_drawer.dart';
 import 'package:to_do_app/src/presentation/widgets/custom_material_bottom_sheet.dart';
 import 'package:to_do_app/src/presentation/widgets/todo_tile.dart';
@@ -79,7 +78,7 @@ class _HomePageState extends State<HomePage> {
             return const Center(child: CircularProgressIndicator());
           }
           if (vm.todos.isEmpty) {
-            return const Center(child: Text(AppStrings.noTodos));
+            return Center(child: Text(S.of(context).no_todos));
           }
           return ListView.separated(
             padding: const EdgeInsets.all(16),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/generated/l10n.dart';
 import 'package:to_do_app/src/presentation/theme.dart';
-import 'package:to_do_app/src/presentation/utils/app_strings.dart';
 import 'package:to_do_app/src/presentation/widgets/material_bottom_sheet_button.dart';
 
 class CustomMaterialBottomSheet extends StatelessWidget {
@@ -38,7 +38,7 @@ class CustomMaterialBottomSheet extends StatelessWidget {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
-              hintText: AppStrings.titleHint,
+              hintText: S.of(context).title_hint,
             ),
             controller: titleController,
           ),
@@ -48,7 +48,7 @@ class CustomMaterialBottomSheet extends StatelessWidget {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
-              hintText: AppStrings.notesHint,
+              hintText: S.of(context).notes_hint,
             ),
             controller: notesController,
           ),
@@ -57,13 +57,13 @@ class CustomMaterialBottomSheet extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               MaterialBottomSheetButton(
-                text: AppStrings.save,
+                text: S.of(context).save,
                 color: AppColors.lime,
                 onTap: onAddPressed,
               ),
               const SizedBox(width: 8),
               MaterialBottomSheetButton(
-                text: AppStrings.cancel,
+                text: S.of(context).cancel,
                 color: theme.colorScheme.error,
                 onTap: onCancelPressed,
               ),

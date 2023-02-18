@@ -1,4 +1,17 @@
 {
   "@@locale": "en",
-  "app_title": "Todo"
+  "app_title": "Todo",
+  "no_todos": "There are no todos",
+  "title_hint": "Title",
+  "notes_hint": "Notes",
+  "save": "Save",
+  "cancel": "Cancel",
+  "settings": "Settings",
+  "language": "Language",
+  "english": "English",
+  "french": "French",
+  "romanian": "Romanian",
+  "theme": "Theme",
+  "dark": "Dark",
+  "light": "Light"
 }

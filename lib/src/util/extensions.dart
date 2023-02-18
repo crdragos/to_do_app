@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:redux/redux.dart';
 import 'package:to_do_app/src/actions/index.dart';
 import 'package:to_do_app/src/models/index.dart';
+import 'package:to_do_app/src/models/settings/language_enum.dart';
 
 extension BuildContextExtension on BuildContext {
   Store<AppState> get store => get<Store<AppState>>();
@@ -14,5 +15,31 @@ extension BuildContextExtension on BuildContext {
 
   T get<T extends Object>({String? instanceName, dynamic param1, dynamic param2}) {
     return read<GetIt>().get<T>(instanceName: instanceName, param1: param1, param2: param2);
+  }
+}
+
+extension LanguageEnumExtention on LanguageEnum {
+  String get displayName {
+    switch (this) {
+      case LanguageEnum.english:
+        return 'en';
+      case LanguageEnum.french:
+        return 'fr';
+      case LanguageEnum.romanian:
+        return 'ro';
+    }
+  }
+
+  LanguageEnum fromString(String code) {
+    switch (code) {
+      case 'en':
+        return LanguageEnum.english;
+      case 'fr':
+        return LanguageEnum.french;
+      case 'ro':
+        return LanguageEnum.romanian;
+      default:
+        return LanguageEnum.english;
+    }
   }
 }

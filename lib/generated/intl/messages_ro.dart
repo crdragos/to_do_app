@@ -22,6 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "app_title": MessageLookupByLibrary.simpleMessage("De facut")
+        "app_title": MessageLookupByLibrary.simpleMessage("De facut"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Anuleaza"),
+        "dark": MessageLookupByLibrary.simpleMessage("Intunecata"),
+        "english": MessageLookupByLibrary.simpleMessage("Engleza"),
+        "french": MessageLookupByLibrary.simpleMessage("Franceza"),
+        "language": MessageLookupByLibrary.simpleMessage("Limba"),
+        "light": MessageLookupByLibrary.simpleMessage("Luminoasa"),
+        "no_todos":
+            MessageLookupByLibrary.simpleMessage("Nu exista niciun todo"),
+        "notes_hint": MessageLookupByLibrary.simpleMessage("Notite"),
+        "romanian": MessageLookupByLibrary.simpleMessage("Romana"),
+        "save": MessageLookupByLibrary.simpleMessage("Salveaza"),
+        "settings": MessageLookupByLibrary.simpleMessage("Setari"),
+        "theme": MessageLookupByLibrary.simpleMessage("Tema"),
+        "title_hint": MessageLookupByLibrary.simpleMessage("Titlu")
       };
 }

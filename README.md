@@ -17,4 +17,4 @@ This is a simple project that represents a mobile applications for managing your
 
 ## Nice to have
 - [x] GetIt
-- [ ] Internalization
+- [x] Internalization

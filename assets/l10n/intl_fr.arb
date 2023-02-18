@@ -1,0 +1,17 @@
+{
+  "@@locale": "fr",
+  "app_title": "Faire",
+  "no_todos": "Il n'y a pas de todo",
+  "title_hint": "Titre",
+  "notes_hint": "Remarques",
+  "save": "Sauvegarder",
+  "cancel": "Annuler",
+  "settings": "Paramètres",
+  "language": "Langue",
+  "english": "Anglaise",
+  "french": "Française",
+  "romanian": "Roumaine",
+  "theme": "Thème",
+  "dark": "Sombre",
+  "light": "Lumière"
+}

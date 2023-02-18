@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/generated/l10n.dart';
 import 'package:to_do_app/src/actions/settings/index.dart';
+import 'package:to_do_app/src/models/settings/language_enum.dart';
 import 'package:to_do_app/src/presentation/assets.dart';
 import 'package:to_do_app/src/presentation/theme.dart';
-import 'package:to_do_app/src/presentation/utils/app_strings.dart';
 import 'package:to_do_app/src/util/extensions.dart';
 
 class CustomDrawer extends Drawer {
@@ -18,23 +19,23 @@ class CustomDrawer extends Drawer {
     return ListView(
       padding: EdgeInsets.zero,
       children: <Widget>[
-        const SizedBox(
+        SizedBox(
           height: 120,
           child: DrawerHeader(
             child: Text(
-              AppStrings.settings,
-              style: TextStyle(
+              S.of(context).settings,
+              style: const TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 24,
               ),
             ),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           child: Text(
-            AppStrings.languages,
-            style: TextStyle(
+            S.of(context).language,
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
             ),
@@ -42,88 +43,82 @@ class CustomDrawer extends Drawer {
         ),
         ListTile(
           leading: Image.asset(AppAssets.appImages.usFlag, height: 50, width: 50),
-          trailing: const Icon(Icons.check, color: AppColors.darkCharcoal),
+          trailing: Icon(
+            context.store.state.settingsState.language != LanguageEnum.english.displayName ? null : Icons.check,
+            color: AppColors.darkCharcoal,
+          ),
           onTap: () {
-            context.dispatch(const SetLanguage(language: 'en'));
+            context.dispatch(SetLanguage(language: LanguageEnum.english.displayName));
             Navigator.of(context).pop();
           },
-          title: const Text(
-            AppStrings.english,
-            style: TextStyle(
-              fontSize: 20,
-            ),
+          title: Text(
+            S.of(context).english,
+            style: const TextStyle(fontSize: 20),
           ),
         ),
         ListTile(
           leading: Image.asset(AppAssets.appImages.frFlag, height: 50, width: 50),
-          trailing: const Icon(Icons.check, color: AppColors.darkCharcoal),
-          title: const Text(
-            AppStrings.french,
-            style: TextStyle(
-              fontSize: 20,
-            ),
+          trailing: Icon(
+            context.store.state.settingsState.language != LanguageEnum.french.displayName ? null : Icons.check,
+            color: AppColors.darkCharcoal,
+          ),
+          onTap: () {
+            context.dispatch(SetLanguage(language: LanguageEnum.french.displayName));
+            Navigator.of(context).pop();
+          },
+          title: Text(
+            S.of(context).french,
+            style: const TextStyle(fontSize: 20),
           ),
         ),
         ListTile(
           leading: Image.asset(AppAssets.appImages.roFlag, height: 50, width: 50),
-          trailing: const Icon(Icons.check, color: AppColors.darkCharcoal),
+          trailing: Icon(
+            context.store.state.settingsState.language != LanguageEnum.romanian.displayName ? null : Icons.check,
+            color: AppColors.darkCharcoal,
+          ),
           onTap: () {
-            context.dispatch(const SetLanguage(language: 'ro'));
+            context.dispatch(SetLanguage(language: LanguageEnum.romanian.displayName));
             Navigator.of(context).pop();
           },
-          title: const Text(
-            AppStrings.romanian,
-            style: TextStyle(
-              fontSize: 20,
-            ),
+          title: Text(
+            S.of(context).romanian,
+            style: const TextStyle(fontSize: 20),
           ),
         ),
         const Divider(),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           child: Text(
-            AppStrings.theme,
-            style: TextStyle(
+            S.of(context).theme,
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
             ),
           ),
         ),
-        const ListTile(
-          leading: Icon(
+        ListTile(
+          leading: const Icon(
             Icons.dark_mode_outlined,
             color: AppColors.darkCharcoal,
           ),
-          trailing: Icon(Icons.check, color: AppColors.darkCharcoal),
+          trailing: const Icon(Icons.check, color: AppColors.darkCharcoal),
           title: Text(
-            AppStrings.dark,
-            style: TextStyle(
+            S.of(context).dark,
+            style: const TextStyle(
               fontSize: 20,
             ),
           ),
         ),
-        const ListTile(
-          leading: Icon(
+        ListTile(
+          leading: const Icon(
             Icons.light_mode,
             color: AppColors.darkCharcoal,
           ),
-          trailing: Icon(Icons.check, color: AppColors.darkCharcoal),
+          trailing: const Icon(Icons.check, color: AppColors.darkCharcoal),
           title: Text(
-            AppStrings.light,
-            style: TextStyle(
-              fontSize: 20,
-            ),
-          ),
-        ),
-        const ListTile(
-          leading: Icon(
-            Icons.phone_iphone,
-            color: AppColors.darkCharcoal,
-          ),
-          trailing: Icon(Icons.check, color: AppColors.darkCharcoal),
-          title: Text(
-            AppStrings.system,
-            style: TextStyle(
+            S.of(context).light,
+            style: const TextStyle(
               fontSize: 20,
             ),
           ),
