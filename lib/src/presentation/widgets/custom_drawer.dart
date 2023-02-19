@@ -53,7 +53,7 @@ class CustomDrawer extends Drawer {
           leading: Image.asset(AppAssets.appImages.usFlag, height: 50, width: 50),
           trailing: Icon(
             context.store.state.settingsState.language != LanguageEnum.english.displayName ? null : Icons.check,
-            color: AppColors.darkCharcoal,
+            color: theme.colorScheme.inversePrimary,
           ),
           onTap: () {
             context.dispatch(SetLanguage(language: LanguageEnum.english.displayName));
@@ -71,7 +71,7 @@ class CustomDrawer extends Drawer {
           leading: Image.asset(AppAssets.appImages.frFlag, height: 50, width: 50),
           trailing: Icon(
             context.store.state.settingsState.language != LanguageEnum.french.displayName ? null : Icons.check,
-            color: AppColors.darkCharcoal,
+            color: theme.colorScheme.inversePrimary,
           ),
           onTap: () {
             context.dispatch(SetLanguage(language: LanguageEnum.french.displayName));
@@ -89,7 +89,7 @@ class CustomDrawer extends Drawer {
           leading: Image.asset(AppAssets.appImages.roFlag, height: 50, width: 50),
           trailing: Icon(
             context.store.state.settingsState.language != LanguageEnum.romanian.displayName ? null : Icons.check,
-            color: AppColors.darkCharcoal,
+            color: theme.colorScheme.inversePrimary,
           ),
           onTap: () {
             context.dispatch(SetLanguage(language: LanguageEnum.romanian.displayName));
