@@ -6,36 +6,29 @@ import 'package:to_do_app/src/util/extensions.dart';
 
 @injectable
 class SettingsApi {
-  const SettingsApi({
-    @Named('themeBox') required Box<String> themeBox,
-    @Named('languageBox') required Box<String> languageBox,
-  })  : _themeBox = themeBox,
-        _languageBox = languageBox;
+  const SettingsApi({@Named('settingsBox') required Box<String> settingsBox}) : _settingsBox = settingsBox;
 
-  final Box<String> _languageBox;
-  final Box<String> _themeBox;
+  final Box<String> _settingsBox;
 
   Future<String> getLanguage() async {
-    if (_languageBox.values.isEmpty) {
+    if (_settingsBox.isEmpty || _settingsBox.get('language') == null) {
       return LanguageEnum.english.displayName;
     }
-    return _languageBox.values.first;
+    return _settingsBox.get('language')!;
   }
 
   Future<void> setLanguage(String language) async {
-    await _languageBox.clear();
-    await _languageBox.add(language);
+    await _settingsBox.put('language', language);
   }
 
   Future<String> getTheme() async {
-    if (_themeBox.values.isEmpty) {
+    if (_settingsBox.isEmpty || _settingsBox.get('theme') == null) {
       return ThemeEnum.dark.displayName;
     }
-    return _themeBox.values.first;
+    return _settingsBox.get('theme')!;
   }
 
   Future<void> setTheme(String theme) async {
-    await _themeBox.clear();
-    await _themeBox.add(theme);
+    await _settingsBox.put('theme', theme);
   }
 }
